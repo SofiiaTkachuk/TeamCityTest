@@ -20,6 +20,7 @@ namespace Test
             options.AddArguments("start-maximized");
             IWebDriver driver = new ChromeDriver(options);
             driver.Navigate().GoToUrl("https://www.google.com.ua/");
+            Assert.IsTrue(driver.Title.Contains("Google"),"Wrong page opened!");
             driver.Close();
         }
     }
